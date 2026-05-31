@@ -1,0 +1,130 @@
+/* Fast LEO AI - Mobile Interface Optimizer Patch */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #020617 !important;
+    color: #f8fafc !important;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Container & Spacing Layouts */
+.min-h-screen {
+    padding: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+header {
+    background: #0f172a;
+    border: 1px solid #f59e0b40;
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Beautiful Form & Box Layouts */
+form, .space-y-3 {
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+h1 { color: #ffffff !important; font-size: 22px !important; font-weight: 900 !important; margin: 0 0 4px 0 !important; tracking-wide: 2px; }
+h2, h3 { color: #f59e0b !important; font-size: 14px !important; font-weight: 800 !important; margin-bottom: 12px !important; text-transform: uppercase; }
+
+/* Input Fields & Buttons Styling */
+textarea {
+    width: 100% !important;
+    background-color: #030712 !important;
+    border: 1px solid #334155 !important;
+    border-radius: 12px !important;
+    padding: 12px !important;
+    color: #ffffff !important;
+    font-size: 13px !important;
+    margin-top: 6px;
+    margin-bottom: 14px;
+    box-sizing: border-box;
+}
+
+select {
+    width: 100% !important;
+    background-color: #030712 !important;
+    border: 1px solid #334155 !important;
+    border-radius: 12px !important;
+    padding: 10px !important;
+    color: #ffffff !important;
+    margin-bottom: 16px;
+}
+
+button[type="submit"] {
+    width: 100% !important;
+    background: linear-gradient(135deg, #f59e0b, #ea580c) !important;
+    color: #000000 !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 14px !important;
+    border-radius: 12px !important;
+    border: none !important;
+    font-size: 13px !important;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+}
+
+/* Aspect Ratio Buttons Fix */
+.flex.gap-1 button {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: #94a3b8;
+    padding: 6px 14px;
+    margin: 4px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+/* Output Image Render Cards */
+.grid-cols-1 > div {
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 18px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #1e293b;
+}
+
+a[target="_blank"] {
+    display: inline-block;
+    background: #1e293b;
+    color: #f59e0b !important;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+footer {
+    text-align: center;
+    font-size: 10px;
+    color: #475569;
+    margin-top: 30px;
+    padding: 10px 0;
+}
