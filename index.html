@@ -3,31 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAST LEO AI PRO</title>
+    <title>Fast LEO AI - Pro Edition</title>
+    
     <link rel="stylesheet" href="style.css">
+    
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>FAST LEO AI PRO</h1>
-        <p>⚡ TURBO FLUX HD CORE ACTIVATED</p>
-    </header>
+    <div id="root"></div>
 
-    <main class="workspace">
-        <h3>Describe Your Image</h3>
-        <textarea id="promptInput" placeholder="Men running"></textarea>
-        
-        <h3>Aspect Ratio</h3>
-        <div class="flex gap-1">
-            <button>1:1</button> <button>16:9</button> <button>9:16</button>
-        </div>
-        
-        <h3>Neural Style Template</h3>
-        <select><option>Anime Cyberpunk Masterpiece</option></select>
-        
-        <button id="generateBtn" onclick="handleGenerate()">COMPILING FAST HD PIXELS...</button>
-    </main>
-
-    <div id="outputArea"></div>
-    <script src="script.js"></script>
+    <script type="text/babel" src="script.js"></script>
 </body>
 </html>
