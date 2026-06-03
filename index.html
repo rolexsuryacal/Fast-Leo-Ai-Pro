@@ -3,32 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fast LEO AI - Pro Edition</title>
+    <title>FAST LEO AI PRO</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="root" class="min-h-screen">
-        <header>
-            <h1>FAST LEO AI</h1>
-        </header>
-        <main>
-            <div class="form-container">
-                <input type="text" id="promptInput" placeholder="Enter your prompt here..." />
-                <button onclick="handleGenerate()" type="submit">GENERATE IMAGE</button>
-            </div>
-        </main>
-    </div>
+    <header>
+        <h1>FAST LEO AI PRO</h1>
+        <p>⚡ TURBO FLUX HD CORE ACTIVATED</p>
+    </header>
 
-    <script>
-        function handleGenerate() {
-            const prompt = document.getElementById('promptInput').value;
-            if (prompt) {
-                generateImage(prompt);
-            } else {
-                alert("Please enter a prompt first!");
-            }
-        }
-    </script>
+    <main class="workspace">
+        <h3>Describe Your Image</h3>
+        <textarea id="promptInput" placeholder="Men running"></textarea>
+        
+        <h3>Aspect Ratio</h3>
+        <div class="flex gap-1">
+            <button>1:1</button> <button>16:9</button> <button>9:16</button>
+        </div>
+        
+        <h3>Neural Style Template</h3>
+        <select><option>Anime Cyberpunk Masterpiece</option></select>
+        
+        <button id="generateBtn" onclick="handleGenerate()">COMPILING FAST HD PIXELS...</button>
+    </main>
+
+    <div id="outputArea"></div>
     <script src="script.js"></script>
 </body>
 </html>
