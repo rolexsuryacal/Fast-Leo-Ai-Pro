@@ -3,27 +3,39 @@ async function handleGenerate() {
     const outputArea = document.getElementById('outputArea');
     const generateBtn = document.getElementById('generateBtn');
 
-    generateBtn.innerText = "RUNNING FAST NEURAL GRID PIPELINE...";
-    
-    // Replace YOUR_API_URL with your actual backend link
+    if (!prompt) {
+        alert("Please enter a prompt!");
+        return;
+    }
+
+    generateBtn.innerText = "GENERATING...";
+
     try {
-        const response = await fetch('YOUR_API_URL', {
+        // REPLACE 'YOUR_API_URL_HERE' with your actual endpoint
+        const response = await fetch('YOUR_API_URL_HERE', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify({ prompt: prompt })
         });
 
+        if (!response.ok) {
+            throw new Error('API request failed');
+        }
+
         const data = await response.json();
-        
+
+        // Assuming your API returns { url: "image_link_here" }
         outputArea.innerHTML = `
             <div class="output-card">
-                <h3>HIGH-RES OUTPUT MANIFEST</h3>
                 <img src="${data.url}" alt="Generated Image" />
             </div>
         `;
-        generateBtn.innerText = "COMPILING FAST HD PIXELS...";
     } catch (error) {
-        outputArea.innerHTML = `<p>Error connecting to server.</p>`;
+        console.error(error);
+        outputArea.innerHTML = `<p style="color:red; text-align:center;">Error connecting to server. Please check your API URL.</p>`;
+    } finally {
         generateBtn.innerText = "COMPILING FAST HD PIXELS...";
     }
 }
