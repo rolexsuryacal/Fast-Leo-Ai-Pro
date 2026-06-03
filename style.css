@@ -1,101 +1,172 @@
-/* Reset and Base Styles */
+/* Fast LEO AI Pro - Mobile Interface Stylesheet */
 body {
     margin: 0;
-    padding: 20px;
-    background-color: #020617;
-    color: #f8fafc;
-    font-family: system-ui, -apple-system, sans-serif;
+    padding: 0;
+    background-color: #020617 !important;
+    color: #f8fafc !important;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Header/Logo Section */
+.min-h-screen {
+    padding: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 header {
     background: #0f172a;
-    border: 1px solid #1e293b;
-    padding: 20px;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    padding: 16px;
     border-radius: 16px;
-    text-align: center;
     margin-bottom: 20px;
+    text-align: center;
 }
 
-header h1 {
-    font-size: 20px;
-    margin: 0;
-    letter-spacing: 1px;
-}
-
-header p {
-    font-size: 12px;
-    color: #f59e0b;
-    margin: 8px 0 0 0;
-}
-
-/* Workspace Layout */
-.workspace {
+form, .output-panel {
     background: #0f172a;
     border: 1px solid #1e293b;
     padding: 20px;
     border-radius: 20px;
+    margin-bottom: 20px;
 }
 
-h3 {
-    color: #f8fafc;
-    font-size: 14px;
-    margin-bottom: 10px;
+h1 {
+    color: #ffffff !important;
+    font-size: 22px !important;
+    font-weight: 900 !important;
+    margin: 0 !important;
+    letter-spacing: 0.05em;
 }
 
-/* Form Elements */
-textarea, select {
+h2 {
+    color: #f59e0b !important;
+    font-size: 14px !important;
+    font-weight: 800 !important;
+    margin-top: 0;
+    margin-bottom: 12px !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+textarea {
     width: 100%;
     background: #030712;
     border: 1px solid #334155;
-    padding: 12px;
     border-radius: 12px;
-    color: white;
+    padding: 12px;
+    color: #fff;
+    font-size: 13px;
+    margin: 6px 0 14px 0;
     box-sizing: border-box;
-    margin-bottom: 15px;
+    resize: none;
 }
 
-.flex {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 15px;
+textarea:focus, select:focus {
+    outline: none;
+    border-color: #f59e0b;
 }
 
-.flex button {
-    flex: 1;
-    background: #1e293b;
+select {
+    width: 100%;
+    background: #030712;
     border: 1px solid #334155;
-    color: #94a3b8;
-    padding: 8px;
-    border-radius: 8px;
-    cursor: pointer;
+    border-radius: 12px;
+    padding: 10px;
+    color: #fff;
+    margin-bottom: 16px;
 }
 
-/* Main Generate Button */
-button#generateBtn {
+button[type="submit"] {
     width: 100%;
     background: linear-gradient(135deg, #f59e0b, #ea580c);
     color: #000;
     font-weight: 900;
-    padding: 14px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
     text-transform: uppercase;
-    font-size: 13px;
-}
-
-/* Output Section */
-.output-card {
-    background: #0f172a;
-    border: 1px solid #1e293b;
-    border-radius: 20px;
-    padding: 15px;
-    margin-top: 20px;
-}
-
-.output-card img {
-    width: 100%;
+    padding: 14px;
     border-radius: 12px;
-    margin-top: 10px;
+    border: none;
+    font-size: 13px;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+}
+
+button[type="submit"]:disabled {
+    background: #334155;
+    color: #94a3b8;
+    cursor: not-allowed;
+}
+
+.ratio-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.ratio-btn {
+    flex: 1;
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: #94a3b8;
+    padding: 8px 0;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.ratio-btn.active {
+    background: #f59e0b;
+    color: #000;
+    border-color: #f59e0b;
+}
+
+.card {
+    background: #030712;
+    border: 1px solid #1e293b;
+    border-radius: 18px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.action-box {
+    padding: 12px;
+    display: flex;
+    gap: 10px;
+    background: #0f172a;
+    border-top: 1px solid #1e293b;
+}
+
+.action-btn {
+    flex: 1;
+    text-align: center;
+    background: #1e293b;
+    color: #94a3b8;
+    padding: 10px 0;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: bold;
+    border: 1px solid #334155;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.dl-btn {
+    background: linear-gradient(135deg, #f59e0b, #ea580c);
+    color: #000;
+    border: none;
+}
+
+.loader-box {
+    text-align: center;
+    padding: 30px;
+    color: #f59e0b;
+    font-weight: bold;
+    font-size: 13px;
 }
