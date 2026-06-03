@@ -1,47 +1,29 @@
-async function generateImage(prompt, isRegenerate = false) {
-    const root = document.getElementById('root');
-    const startTime = Date.now();
-    
-    // UI: Status message using your design classes
-    root.innerHTML = `<p id="timer" class="status-message">Generating... 0 seconds</p>`;
-    
-    const timerInterval = setInterval(() => {
-        const seconds = Math.floor((Date.now() - startTime) / 1000);
-        const timerElement = document.getElementById('timer');
-        if (timerElement) {
-            timerElement.innerText = `Generating... ${seconds} seconds elapsed`;
-        }
-    }, 1000);
+async function handleGenerate() {
+    const prompt = document.getElementById('promptInput').value;
+    const outputArea = document.getElementById('outputArea');
+    const generateBtn = document.getElementById('generateBtn');
 
+    generateBtn.innerText = "RUNNING FAST NEURAL GRID PIPELINE...";
+    
+    // Replace YOUR_API_URL with your actual backend link
     try {
-        const response = await fetch('YOUR_URL_HERE', {
+        const response = await fetch('YOUR_API_URL', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ 
-                prompt: prompt, 
-                model: 'flux-schnell', 
-                num_inference_steps: 15 
-            })
+            body: JSON.stringify({ prompt: prompt })
         });
 
-        clearInterval(timerInterval);
+        const data = await response.json();
         
-        if (response.ok) {
-            const data = await response.json();
-            const totalTime = Math.floor((Date.now() - startTime) / 1000);
-            
-            root.innerHTML = `
-                <div class="output-card">
-                    <img src="${data.url}" class="generated-image" alt="Generated Image" />
-                    <p class="time-meta">Generated in ${totalTime} seconds</p>
-                    <button class="regen-btn" onclick="generateImage('${prompt}', true)">Regenerate</button>
-                </div>
-            `;
-        } else {
-            root.innerHTML = `<p class="error-msg">Server error. <button onclick="location.reload()">Try Again</button></p>`;
-        }
+        outputArea.innerHTML = `
+            <div class="output-card">
+                <h3>HIGH-RES OUTPUT MANIFEST</h3>
+                <img src="${data.url}" alt="Generated Image" />
+            </div>
+        `;
+        generateBtn.innerText = "COMPILING FAST HD PIXELS...";
     } catch (error) {
-        clearInterval(timerInterval);
-        root.innerHTML = `<p class="error-msg">Error: Connection failed. <button onclick="location.reload()">Retry</button></p>`;
+        outputArea.innerHTML = `<p>Error connecting to server.</p>`;
+        generateBtn.innerText = "COMPILING FAST HD PIXELS...";
     }
 }
