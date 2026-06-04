@@ -1,11 +1,12 @@
-/* Fast LEO AI Pro - Mobile Interface Stylesheet */
+/* Fast LEO AI Pro - Finalized Mobile-Responsive Stylesheet */
 body {
     margin: 0;
     padding: 0;
     background-color: #020617 !important;
     color: #f8fafc !important;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-    -webkit-font-smoothing: antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: contain; /* Prevents pull-to-refresh jitter */
 }
 
 .min-h-screen {
@@ -31,40 +32,19 @@ form, .output-panel {
     margin-bottom: 20px;
 }
 
-h1 {
-    color: #ffffff !important;
-    font-size: 22px !important;
-    font-weight: 900 !important;
-    margin: 0 !important;
-    letter-spacing: 0.05em;
-}
-
-h2 {
-    color: #f59e0b !important;
-    font-size: 14px !important;
-    font-weight: 800 !important;
-    margin-top: 0;
-    margin-bottom: 12px !important;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
+h1 { color: #ffffff !important; font-size: 22px !important; font-weight: 900 !important; margin: 0 !important; }
+h2 { color: #f59e0b !important; font-size: 14px !important; font-weight: 800 !important; margin: 0 0 12px 0; text-transform: uppercase; }
 
 textarea {
     width: 100%;
     background: #030712;
     border: 1px solid #334155;
     border-radius: 12px;
-    padding: 12px;
+    padding: 14px;
     color: #fff;
-    font-size: 13px;
-    margin: 6px 0 14px 0;
+    font-size: 16px; /* 16px prevents auto-zoom on Android */
     box-sizing: border-box;
     resize: none;
-}
-
-textarea:focus, select:focus {
-    outline: none;
-    border-color: #f59e0b;
 }
 
 select {
@@ -72,53 +52,39 @@ select {
     background: #030712;
     border: 1px solid #334155;
     border-radius: 12px;
-    padding: 10px;
+    padding: 12px;
     color: #fff;
     margin-bottom: 16px;
 }
+
+.ratio-bar { display: flex; gap: 8px; margin-bottom: 14px; }
+.ratio-btn {
+    flex: 1;
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: #94a3b8;
+    padding: 12px 0;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 12px;
+}
+.ratio-btn.active { background: #f59e0b; color: #000; border-color: #f59e0b; }
 
 button[type="submit"] {
     width: 100%;
     background: linear-gradient(135deg, #f59e0b, #ea580c);
     color: #000;
     font-weight: 900;
-    text-transform: uppercase;
-    padding: 14px;
+    padding: 16px;
     border-radius: 12px;
     border: none;
-    font-size: 13px;
-    cursor: pointer;
-    letter-spacing: 0.05em;
+    font-size: 14px;
+    text-transform: uppercase;
 }
 
 button[type="submit"]:disabled {
     background: #334155;
     color: #94a3b8;
-    cursor: not-allowed;
-}
-
-.ratio-bar {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 14px;
-}
-
-.ratio-btn {
-    flex: 1;
-    background: #1e293b;
-    border: 1px solid #334155;
-    color: #94a3b8;
-    padding: 8px 0;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 11px;
-    cursor: pointer;
-}
-
-.ratio-btn.active {
-    background: #f59e0b;
-    color: #000;
-    border-color: #f59e0b;
 }
 
 .card {
@@ -129,38 +95,20 @@ button[type="submit"]:disabled {
     margin-bottom: 16px;
 }
 
-img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+img { width: 100%; height: auto; display: block; min-height: 300px; background: #0f172a; }
 
-.action-box {
-    padding: 12px;
-    display: flex;
-    gap: 10px;
-    background: #0f172a;
-    border-top: 1px solid #1e293b;
-}
-
-.action-btn {
-    flex: 1;
-    text-align: center;
-    background: #1e293b;
-    color: #94a3b8;
-    padding: 10px 0;
-    border-radius: 8px;
-    font-size: 11px;
-    font-weight: bold;
-    border: 1px solid #334155;
-    text-decoration: none;
-    cursor: pointer;
-}
+.action-box { padding: 12px; background: #0f172a; border-top: 1px solid #1e293b; }
 
 .dl-btn {
+    width: 100%;
     background: linear-gradient(135deg, #f59e0b, #ea580c);
     color: #000;
     border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
 }
 
 .loader-box {
@@ -168,5 +116,10 @@ img {
     padding: 30px;
     color: #f59e0b;
     font-weight: bold;
-    font-size: 13px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
 }
